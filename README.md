@@ -51,22 +51,27 @@ cd ecosystem_stats
      ```
      Then visit `http://localhost:8000` in your browser
 
-### Hosting on GitHub Pages
+### Hosting on Vercel
 
-This dashboard can be easily hosted using GitHub Pages:
+This dashboard can be easily deployed on Vercel for fast, global hosting:
 
 1. Push your repository to GitHub
-2. Go to your repository settings on GitHub
-3. Navigate to the "Pages" section in the sidebar
-4. Under "Source", select "main" branch
-5. Click "Save"
+2. Go to [Vercel](https://vercel.com/) and sign up/login (you can use your GitHub account)
+3. Click "Add New" and select "Project"
+4. Import your GitHub repository (you may need to install the Vercel GitHub app first)
+5. Configure project settings:
+   - Framework Preset: Select "Other" (static HTML)
+   - Build and Output Settings: Leave defaults
+   - Environment Variables: Add any if needed
+6. Click "Deploy"
 
-Your dashboard will be available at `https://yourusername.github.io/ecosystem_stats/` (replace `yourusername` with your actual GitHub username).
+Your dashboard will be deployed and accessible at a Vercel URL (e.g., `ecosystem-stats.vercel.app`).
 
 For a custom domain:
-1. Add your domain in the GitHub Pages settings
-2. Create a CNAME record with your DNS provider pointing to your GitHub Pages domain
-3. Add a CNAME file to your repository root with your custom domain
+1. Go to your project settings in Vercel
+2. Navigate to the "Domains" section
+3. Add your custom domain (e.g., `ecosystem-stats.arc.fun`)
+4. Follow Vercel's instructions to set up the required DNS records (typically a CNAME record)
 
 ## Project Structure
 
