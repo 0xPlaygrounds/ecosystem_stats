@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Rig Ecosystem Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-8">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div>
+                    <h1 class="text-3xl font-bold">Rig Ecosystem Dashboard</h1>
+                    <p class="mt-2 text-indigo-100">Growth & Adoption Metrics for Investors</p>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <p class="text-sm text-indigo-200">Last updated: April 8, 2025</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 md:px-8 py-8">
+        <!-- Rig Framework Section -->
+        <section class="mb-12">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-2xl font-bold section-heading">Rig Framework</h2>
+                <a href="https://github.com/0xPlaygrounds/rig" target="_blank" class="px-3 py-1 bg-indigo-50 hover:bg-indigo-100 text-indigo-600 text-sm rounded-lg transition-colors duration-300 flex items-center">
+                    Learn more
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                </a>
+            </div>
+            <div class="card p-6">
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold mb-3">The Foundation of Agentic AI</h3>
+                    <p class="text-gray-700 mb-4">Rig is an open-source Rust-based framework designed for building powerful, lightweight AI agents. It provides a high-performance foundation that abstracts away the complexity of juggling multiple models, databases, and external tools, turning them into a coherent development experience.</p>
+                    <p class="text-gray-700 mb-4">With Rig, developers can focus on innovating at the application layer rather than wrestling with custom integrations. The framework's robust architecture supports multi-agent orchestration, on-chain interactions, and enterprise-grade reliability.</p>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold mb-3">Supported Model Providers</h3>
+                    <p class="text-sm text-gray-600 mb-4">Rig offers a unified API across multiple AI model providers, allowing developers to choose the right model for each task or seamlessly switch between providers with minimal refactoring.</p>
+                    
+                    <div class="flex flex-wrap justify-center items-center gap-8 mb-6 py-6 bg-gray-50 rounded-lg">
+                        <div class="flex items-center justify-center h-8 w-24">
+                            <img src="logos/models/anthropic.png" alt="Anthropic" class="max-h-6 object-contain">
+                        </div>
+                        <div class="flex items-center justify-center h-8 w-24">
+                            <img src="logos/models/openai.png" alt="OpenAI" class="max-h-6 object-contain">
+                        </div>
+                        <div class="flex items-center justify-center h-8 w-24">
+                            <img src="logos/models/gemini.png" alt="Gemini" class="max-h-5 object-contain">
+                        </div>
+                        <div class="flex items-center justify-center h-8 w-24">
+                            <img src="logos/models/deepseek.png" alt="DeepSeek" class="max-h-5 object-contain">
+                        </div>
+                        <div class="flex items-center justify-center h-8 w-24">
+                            <img src="logos/models/ollama.png" alt="Ollama" class="max-h-6 object-contain">
+                        </div>
+                        <div class="flex items-center justify-center h-8 w-24">
+                            <img src="logos/models/perplexity.png" alt="Perplexity" class="max-h-6 object-contain">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="border rounded-lg p-4">
+                        <h4 class="font-medium text-indigo-700 mb-2">Core Capabilities</h4>
+                        <ul class="text-sm text-gray-700 space-y-1">
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-indigo-500 mr-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                Type-safe AI agent development
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-indigo-500 mr-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                Multi-agent orchestration
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-indigo-500 mr-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                Streamlined prompt handling
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="border rounded-lg p-4">
+                        <h4 class="font-medium text-indigo-700 mb-2">Database Integrations</h4>
+                        <ul class="text-sm text-gray-700 space-y-1">
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-indigo-500 mr-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                Vector databases (MongoDB, PostgreSQL, Qdrant)
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-indigo-500 mr-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                Managed embedding storage
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-indigo-500 mr-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                Retrieval-augmented generation
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="border rounded-lg p-4">
+                        <h4 class="font-medium text-indigo-700 mb-2">Advanced Features</h4>
+                        <ul class="text-sm text-gray-700 space-y-1">
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-indigo-500 mr-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                Streaming API support
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-indigo-500 mr-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                Blockchain/on-chain integrations
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-indigo-500 mr-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                Model Context Protocol (MCP) support
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Adoption & Growth Metrics Section -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold section-heading">Adoption & Growth Metrics</h2>
+            <div class="card p-6">
+                <!-- Key Stats Row -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                    <!-- GitHub Stars Card -->
+                    <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="key-metric-label">Current GitHub Stars</p>
+                                <h2 class="key-metric-value text-2xl font-bold text-indigo-700" id="currentStars">3,372</h2>
+                            </div>
+                            <div class="bg-indigo-100 p-3 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <div class="text-sm text-gray-500 flex items-center">
+                                <span class="text-green-500 mr-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                                    </svg>
+                                </span>
+                                <span id="starsGrowthRate">+282 in last 30 days</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Star Velocity Card -->
+                    <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="key-metric-label">Star Velocity</p>
+                                <h2 class="key-metric-value text-2xl font-bold text-green-600" id="starVelocity">11.06</h2>
+                                <p class="text-xs text-gray-500">stars/day (average)</p>
+                            </div>
+                            <div class="bg-green-100 p-3 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <div class="text-sm text-gray-500">
+                                <span id="velocityTrend">305 days since launch</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contributors Card -->
+                    <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="key-metric-label">Contributors</p>
+                                <h2 class="key-metric-value text-2xl font-bold text-purple-600">56+</h2>
+                            </div>
+                            <div class="bg-purple-100 p-3 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <div class="text-sm text-gray-500">
+                                <span>340+ Forks</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- User Adoption Card -->
+                    <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="key-metric-label">Active Teams/Companies</p>
+                                <h2 class="key-metric-value text-2xl font-bold text-blue-600">292+</h2>
+                            </div>
+                            <div class="bg-blue-100 p-3 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <div class="text-sm text-gray-500">
+                                <span>Including enterprise partners</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Chart Section -->
+                <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100 mb-6">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-2">
+                        <h3 class="text-lg font-medium text-gray-900">GitHub Star Growth Trajectory</h3>
+                        <div class="flex space-x-2 flex-wrap">
+                            <button id="allTimeBtn" class="px-3 py-1 rounded text-sm font-medium bg-indigo-100 text-indigo-700 mb-1 mr-1">All Time</button>
+                            <button id="last90DaysBtn" class="px-3 py-1 rounded text-sm font-medium bg-gray-100 text-gray-700 mb-1 mr-1">Last 90 Days</button>
+                            <button id="last30DaysBtn" class="px-3 py-1 rounded text-sm font-medium bg-gray-100 text-gray-700 mb-1">Last 30 Days</button>
+                        </div>
+                    </div>
+                    <div id="starGrowthChart" class="relative h-[400px]"></div>
+                    <div id="customTooltip" class="hidden absolute bg-white p-2 rounded shadow-lg border border-gray-200 pointer-events-none"></div>
+                </div>
+                
+                <!-- Milestones Section -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <!-- Average Growth Rate Card -->
+                    <div id="growthRateCard" class="bg-green-50 p-4 rounded-lg">
+                        <div class="text-green-600 font-medium">Average Growth Rate</div>
+                        <div class="text-2xl font-semibold" id="avgGrowthRate">11.06 stars/day</div>
+                        <div class="text-sm text-gray-600">Consistent growth since launch</div>
+                    </div>
+                    
+                    <!-- Milestone Cards Container -->
+                    <div id="milestone1Card" class="bg-indigo-50 p-4 rounded-lg"></div>
+                    <div id="milestone2Card" class="bg-indigo-50 p-4 rounded-lg"></div>
+                    <div id="milestone3Card" class="bg-indigo-50 p-4 rounded-lg"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enterprise Partners Section -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold section-heading">Enterprise Partners & Integrations</h2>
+            <div class="card p-6">
+                <p class="text-gray-600 mb-6">Official partnerships and integrations demonstrate product-market fit and industry credibility.</p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
+                    <div class="flex flex-col items-center">
+                        <div class="h-16 flex items-center justify-center">
+                            <img src="logos/rig_integrations/mongo.svg" alt="MongoDB" class="max-h-12 object-contain" />
+                        </div>
+                        <p class="text-xs text-gray-500">Official Integration</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="h-16 flex items-center justify-center">
+                            <img src="logos/rig_integrations/neo4j.svg" alt="Neo4j" class="max-h-12 object-contain" />
+                        </div>
+                        <p class="text-xs text-gray-500">Graph Database Partner</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="h-16 flex items-center justify-center">
+                            <img src="logos/rig_integrations/qdrant.svg" alt="Qdrant" class="max-h-12 object-contain" />
+                        </div>
+                        <p class="text-xs text-gray-500">Vector Database Integration</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="h-16 flex items-center justify-center">
+                            <img src="logos/rig_integrations/lancedb.svg" alt="LanceDB" class="max-h-10 object-contain" />
+                        </div>
+                        <p class="text-xs text-gray-500">Embedded Vector DB</p>
+                    </div>
+                </div>
+                
+                <div class="mt-8">
+                    <h3 class="text-lg font-semibold mb-3">Notable Industry Adopters</h3>
+                    <div class="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+                        <div class="border rounded p-4 flex flex-col items-center">
+                            <div class="h-12 flex items-center justify-center mb-2">
+                                <img src="logos/rig_integrations/groq.svg" alt="Groq" class="max-h-8 object-contain" />
+                            </div>
+                            <p class="text-xs text-gray-500">Ultra-fast Inference</p>
+                        </div>
+                        <div class="border rounded p-4 flex flex-col items-center">
+                            <div class="h-12 flex items-center justify-center mb-2">
+                                <img src="logos/rig_integrations/huggingface.svg" alt="HuggingFace" class="max-h-8 object-contain" />
+                            </div>
+                            <p class="text-xs text-gray-500">ML Models Integration</p>
+                        </div>
+                        <div class="border rounded p-4 flex flex-col items-center">
+                            <div class="h-12 flex items-center justify-center mb-2">
+                                <img src="logos/rig_integrations/togetherai.svg" alt="Together AI" class="max-h-8 object-contain" />
+                            </div>
+                            <p class="text-xs text-gray-500">AI Infrastructure</p>
+                        </div>
+                        <div class="border rounded p-4 flex flex-col items-center">
+                            <div class="h-12 flex items-center justify-center mb-2">
+                                <img src="logos/rig_integrations/hyperbolic_blue.png" alt="Hyperbolic" class="max-h-8 object-contain" />
+                            </div>
+                            <p class="text-xs text-gray-500">Decentralized GPU Cloud</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Arc Ecosystem Section -->
+        <section class="mb-12">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-2xl font-bold section-heading">Arc Ecosystem</h2>
+                <a href="https://www.arc.fun/" target="_blank" class="px-3 py-1 bg-indigo-50 hover:bg-indigo-100 text-indigo-600 text-sm rounded-lg transition-colors duration-300 flex items-center">
+                    Learn more
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                </a>
+            </div>
+            <div class="card p-6">
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold mb-3">From Vision to Reality</h3>
+                    <p class="text-gray-700 mb-4">Arc is a thriving community of developers and non-developers coordinated towards building and distributing advanced practical AI applications and AI agents built with Rig. Through the Ryzome platform—the "Agentic App Store"—Arc connects intelligent agents with thousands of digital services, creating a unified economy for the next generation of AI.</p>
+                    <p class="text-gray-700 mb-4">By bridging AI with blockchain technology, Arc is transforming theoretical AI capabilities into practical automation that delivers tangible benefits to users across Web2 and Web3.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6 mb-8">
+                    <div class="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-lg p-6 text-center">
+                        <div class="text-4xl font-bold text-indigo-600 mb-2">20+</div>
+                        <div class="text-gray-700">Projects in Ecosystem</div>
+                    </div>
+                    <div class="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-lg p-6 text-center">
+                        <div class="text-4xl font-bold text-indigo-600 mb-2">5</div>
+                        <div class="text-gray-700">Live Projects</div>
+                    </div>
+                    <div class="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-lg p-6 text-center">
+                        <div class="text-4xl font-bold text-indigo-600 mb-2">10</div>
+                        <div class="text-gray-700">Projects in Incubation</div>
+                    </div>
+                </div>
+                
+                <h3 class="text-lg font-semibold mb-4">Notable Live Projects</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                    <div class="border rounded-lg overflow-hidden project-card">
+                        <div class="bg-indigo-100 px-4 py-2 flex items-center justify-between">
+                            <p class="font-medium">SoulGraph</p>
+                            <div class="h-8 w-8">
+                                <img src="logos/arc_builders/soulgraph.png" alt="SoulGraph Logo" class="h-full object-contain">
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-sm text-gray-600 mb-2">Creates AI agents that remember and grow through experience—not just process information. Provides a studio for building meaningful relationships with AI and open-source infrastructure for developers to add memory and personality to any agent.</p>
+                            <div class="flex items-center mt-3">
+                                <div class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Live</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border rounded-lg overflow-hidden project-card">
+                        <div class="bg-indigo-100 px-4 py-2 flex items-center justify-between">
+                            <p class="font-medium">Listen-rs</p>
+                            <div class="h-8 w-8">
+                                <img src="logos/arc_builders/listen-rs.png" alt="Listen-rs Logo" class="h-full object-contain">
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-sm text-gray-600 mb-2">A Rust framework for blockchain actions, focusing on complex DeFi operations and trading automation. By combining Listen with Rig, they provide a high-performance toolkit for building sophisticated DeFi applications of tomorrow.</p>
+                            <div class="flex items-center mt-3">
+                                <div class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Live</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border rounded-lg overflow-hidden project-card">
+                        <div class="bg-indigo-100 px-4 py-2 flex items-center justify-between">
+                            <p class="font-medium">AskJimmy</p>
+                            <div class="h-8 w-8">
+                                <img src="logos/arc_builders/askjimmy.png" alt="AskJimmy Logo" class="h-full object-contain">
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-sm text-gray-600 mb-2">AI-driven trading platform aiming to be the leading ecosystem for autonomous finance agents. Pioneering a decentralized hedge fund composed of specialized, autonomous trading agents with strategies from top quants and hedge-fund veterans.</p>
+                            <div class="flex items-center mt-3">
+                                <div class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Live</div>
+                                <div class="text-xs text-gray-500 ml-2">First Arc Forge launch</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border rounded-lg overflow-hidden project-card">
+                        <div class="bg-indigo-100 px-4 py-2 flex items-center justify-between">
+                            <p class="font-medium">Fabelis AI</p>
+                            <div class="h-8 w-8">
+                                <img src="logos/arc_builders/fabelis.png" alt="Fabelis AI Logo" class="h-full object-contain">
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-sm text-gray-600 mb-2">An AI agent framework built on Rig.rs that extends functionality into social media agents, storytelling, and narration. Adopts the Model Context Protocol (MCP) to enable agents to perform complex tasks efficiently across multiple domains.</p>
+                            <div class="flex items-center mt-3">
+                                <div class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Live</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border rounded-lg overflow-hidden project-card">
+                        <div class="bg-indigo-100 px-4 py-2 flex items-center justify-between">
+                            <p class="font-medium">AgentTank</p>
+                            <div class="h-8 w-8">
+                                <img src="logos/arc_builders/agenttank.png" alt="AgentTank Logo" class="h-full object-contain">
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-sm text-gray-600 mb-2">Your crypto copilot—an always-on, desktop-integrated assistant that sees your screen, hears your voice, and orchestrates tasks at the speed of conversation. Streamlines research, trading, security checks across all major blockchains.</p>
+                            <div class="flex items-center mt-3">
+                                <div class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Live</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold mb-3">Ecosystem Partners</h3>
+                    <p class="text-sm text-gray-600 mb-4">Partners provide technology resources, infrastructure, distribution channels, and networks to support the growth and maturity of the Arc ecosystem—from TEEs (trusted execution environments) to cloud infrastructure, GPUs, and AI-centric blockchains.</p>
+                    
+                    <div class="flex flex-wrap justify-center items-center gap-6 mb-6 py-6 bg-gray-50 rounded-lg">
+                        <div class="flex items-center justify-center h-8 w-24">
+                            <img src="logos/ecosystem_partners/solana.png" alt="Solana" class="max-h-6 object-contain">
+                        </div>
+                        <div class="flex items-center justify-center h-8 w-24">
+                            <img src="logos/ecosystem_partners/arbitrum.png" alt="Arbitrum" class="max-h-6 object-contain">
+                        </div>
+                        <div class="flex items-center justify-center h-8 w-24">
+                            <img src="logos/ecosystem_partners/mongodb.png" alt="MongoDB" class="max-h-5 object-contain">
+                        </div>
+                        <div class="flex items-center justify-center h-8 w-24">
+                            <img src="logos/ecosystem_partners/hyperbolic_blue.png" alt="Hyperbolic" class="max-h-5 object-contain">
+                        </div>
+                        <div class="flex items-center justify-center h-8 w-24">
+                            <img src="logos/ecosystem_partners/eternals.png" alt="Eternals" class="max-h-6 object-contain">
+                        </div>
+                        <div class="flex items-center justify-center h-8 w-24">
+                            <img src="logos/ecosystem_partners/abstract.png" alt="Abstract" class="max-h-6 object-contain">
+                        </div>
+                        <div class="flex items-center justify-center h-8 w-24">
+                            <img src="logos/ecosystem_partners/sendai.png" alt="Sendai" class="max-h-6 object-contain">
+                        </div>
+                        <div class="flex items-center justify-center h-8 w-24">
+                            <img src="logos/ecosystem_partners/shuttle.png" alt="Shuttle" class="max-h-6 object-contain">
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+                        <div class="border rounded-lg p-3 text-center">
+                            <p class="font-medium">TEE Providers</p>
+                            <p class="text-xs text-gray-500">Secure compute environments</p>
+                        </div>
+                        <div class="border rounded-lg p-3 text-center">
+                            <p class="font-medium">Cloud Infrastructure</p>
+                            <p class="text-xs text-gray-500">Scalable deployment</p>
+                        </div>
+                        <div class="border rounded-lg p-3 text-center">
+                            <p class="font-medium">GPU Partners</p>
+                            <p class="text-xs text-gray-500">Accelerated compute</p>
+                        </div>
+                        <div class="border rounded-lg p-3 text-center">
+                            <p class="font-medium">AI Blockchains</p>
+                            <p class="text-xs text-gray-500">Decentralized AI networks</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-lg">
+                    <h3 class="font-medium mb-3">Community & Achievements</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-medium text-indigo-700 mb-2">Vibrant Community</h4>
+                            <div class="grid grid-cols-2 gap-3 mb-4">
+                                <div class="bg-white rounded-lg p-3 text-center shadow-sm">
+                                    <p class="text-xl font-semibold text-indigo-600">8,700+</p>
+                                    <p class="text-xs text-gray-600">Telegram Members</p>
+                                </div>
+                                <div class="bg-white rounded-lg p-3 text-center shadow-sm">
+                                    <p class="text-xl font-semibold text-indigo-600">1,500+</p>
+                                    <p class="text-xs text-gray-600">Discord Members</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-indigo-700 mb-2">Growth & Recognition</h4>
+                            <ul class="text-sm text-gray-700 space-y-2">
+                                <li class="flex items-start">
+                                    <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    Sponsored & co-hosted 5+ hackathons for the Rig library
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    Won major grants from Solana and Arbitrum networks
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    Rapidly growing developer contributions to Rig codebase
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8">
+                    <div class="flex justify-between items-center mb-3">
+                        <h3 class="text-lg font-semibold">Future Outlook: Ryzome Agentic App Store</h3>
+                        <a href="https://www.arc.fun/ryzome-waitlist" target="_blank" class="px-3 py-1 bg-indigo-50 hover:bg-indigo-100 text-indigo-600 text-sm rounded-lg transition-colors duration-300 flex items-center">
+                            Learn more
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="text-gray-700 mb-4">By 2026, Ryzome aims to be the universal hub for AI services—from enterprise and consumer apps to advanced AI research. As more projects onboard, the network effect grows, creating an ever-richer "digital toolbox" for next-generation AI agents that can seamlessly plan, coordinate, and execute real-world tasks.</p>
+                    <div class="bg-indigo-50 rounded-lg p-4">
+                        <div class="text-sm text-gray-700 italic">
+                            "We are on the verge of an era where AI agents don't just recommend, they act. They'll negotiate purchases, arrange schedules, execute complex financial transactions, and coordinate enterprise-scale operations."
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div>
+                    <p>© 2025 Playgrounds - Rig Ecosystem Dashboard</p>
+                    <p class="text-sm text-gray-400 mt-1">For investor information only</p>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <a href="#" class="text-indigo-300 hover:text-white transition-colors duration-300">Contact: founder@playgrounds.network</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
