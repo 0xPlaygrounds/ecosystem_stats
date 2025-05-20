@@ -2,6 +2,32 @@
 google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(initializeDashboard);
 
+// Fetch the latest GitHub metrics from the data pipeline
+async function fetchLatestMetrics() {
+    try {
+        const res = await fetch('data/metrics/daily/github_metrics.json');
+        const json = await res.json();
+        const entries = json.entries || [];
+        if (entries.length === 0) return;
+
+        const latest = entries[entries.length - 1];
+        const prev = entries.length > 1 ? entries[entries.length - 2] : latest;
+        const first = entries[0];
+
+        const stars = latest.stars || 0;
+        const starsGrowth = stars - (prev.stars || 0);
+        const daysSinceStart = Math.floor((new Date(latest.timestamp) - new Date(first.timestamp)) / 86400000);
+        const starVelocity = daysSinceStart > 0 ? Math.round(stars / daysSinceStart) : 0;
+
+        document.getElementById('currentStars').textContent = stars.toLocaleString();
+        document.getElementById('starsGrowthRate').textContent = `+${starsGrowth} since last update`;
+        document.getElementById('starVelocity').textContent = starVelocity;
+        document.getElementById('velocityTrend').textContent = `${daysSinceStart} days since launch`;
+    } catch (err) {
+        console.error('Error loading metrics', err);
+    }
+}
+
 // Process the CSV data
 function processStarHistoryData() {
     // Direct data loading to avoid CORS issues
@@ -390,8 +416,10 @@ function updateDashboardStats(data, metrics) {
 }
 
 // Initialize the dashboard
-function initializeDashboard() {
+async function initializeDashboard() {
     try {
+        // Load latest metrics for the key stat cards
+        await fetchLatestMetrics();
         // Process the star history data
         const starHistory = processStarHistoryData();
         
