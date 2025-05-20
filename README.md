@@ -73,21 +73,36 @@ For a custom domain:
 3. Add your custom domain (e.g., `ecosystem-stats.arc.fun`)
 4. Follow Vercel's instructions to set up the required DNS records (typically a CNAME record)
 
+## Live Metrics Pipeline
+
+Automated GitHub workflows run the Python scripts under `metrics/` and `api/`.
+These fetch stats from GitHub, Telegram, X and the Solana blockchain. Updated
+metrics and achievement files are written to the `data/` directory and
+committed back to the repository so the dashboard always serves fresh data.
+
+### Required GitHub Secrets
+
+- `TELEGRAM_BOT_TOKEN` and `GROUP_CHAT_ID`
+- `DISCORD_BOT_TOKEN` and `DISCORD_CHANNEL_ID`
+- `REPO` – repository in `owner/name` form
+- `HELIUS_API_KEY` and `TOKEN_ADDRESS`
+
 ## Project Structure
 
 - `index.html` - Main dashboard layout and content
 - `dashboard.js` - JavaScript for dashboard interactivity and chart rendering
 - `styles.css` - Custom styles beyond Tailwind
 - `logos/` - Directory containing partner and project logos
-- `stars_data.csv` - Historical GitHub star data
 
 ## Customizing the Dashboard
 
-To update the dashboard with new data:
+To update logos or project information manually:
 
-1. Replace `stars_data.csv` with updated GitHub star metrics
-2. Update partner logos in the `logos/` directory
-3. Modify project details in the Arc Ecosystem section as needed
+1. Update partner logos in the `logos/` directory
+2. Modify project details in the Arc Ecosystem section as needed
+
+All metrics JSON files in `data/` are automatically updated by the GitHub
+workflows described below.
 
 ## License
 
