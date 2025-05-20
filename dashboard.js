@@ -78,10 +78,27 @@ function calculateGrowthMetrics(data) {
             monthStartStars = entry.stars;
         }
     });
-    
-    // Calculate average daily growth rate
+
     const firstEntry = data[0];
     const lastEntry = data[data.length - 1];
+
+    // Capture growth for the final month which isn't handled in the loop
+    if (previousMonth !== null) {
+        const growth = monthStartStars > 0 ?
+            ((lastEntry.stars - monthStartStars) / monthStartStars * 100).toFixed(1) :
+            100;
+
+        monthlyGrowth.push({
+            month: previousMonth,
+            startDate: monthStart,
+            endDate: lastEntry.date,
+            startStars: monthStartStars,
+            endStars: lastEntry.stars,
+            absoluteGrowth: lastEntry.stars - monthStartStars,
+            percentageGrowth: growth
+        });
+    }
+    // Calculate average daily growth rate
     const daysDifference = (lastEntry.date - firstEntry.date) / (1000 * 60 * 60 * 24);
     const totalGrowth = lastEntry.stars - firstEntry.stars;
     const avgDailyGrowth = daysDifference > 0 ? (totalGrowth / daysDifference).toFixed(2) : 0;
